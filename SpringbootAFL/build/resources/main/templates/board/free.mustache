@@ -1,0 +1,43 @@
+{{>layouts/header}}
+<div class="bg-image p-5 text-center shadow-1-strong rounded mb-2 text-white"
+     style="background-image: url('/images/board.jpg'); height: 48vh; object-fit: cover; background-repeat:no-repeat; background-size:cover;">
+    <h1 class="mb-3 h2">자유게시판</h1>
+</div>
+
+<button style="display: inline-block; float: right; margin-right: 1.5rem" type="button" class="btn btn-secondary" id="writeBtn">글쓰기</button>
+<table class="table mb-3">
+    <thead>
+    <tr>
+        <th scope="col">작성자</th>
+        <th scope="col">제목</th>
+        <th scope="col">날짜</th>
+        <th scope="col">댓글수</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    {{#articleList}}
+    <tr>
+        <th scope="row">{{nickname}}</th>
+        <td><a href="/board/free/{{id}}">{{title}}</a></td>
+        <td>
+            {{#writeTime}}{{writeTime}}{{/writeTime}}
+            {{^writeTime}}Null{{/writeTime}}
+        </td>
+        {{#counts}}
+        <td>{{count}}</td>
+        {{/counts}}
+    </tr>
+    {{/articleList}}
+    </tbody>
+</table>
+
+<script>
+    {
+        const writeBtn = document.querySelector("#writeBtn");
+
+        writeBtn.addEventListener("click", function() {
+            window.location.href = '/board/write';
+        })
+    }
+</script>

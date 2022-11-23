@@ -1,0 +1,65 @@
+{{>layouts/header}}
+{{#article}}
+
+    <div class="bg-image p-5 text-center shadow-1-strong rounded mb-2 text-white"
+         style="background-image: url('https://talk.op.gg/images/game/bg_lol.jpg'); height: 30vh; object-fit: cover; background-repeat:no-repeat; background-size:cover;">
+        <h1 class="mb-3 h2">자유게시판</h1>
+    </div>
+    <table class="table mb-1">
+        <thead>
+        <tr>
+            <th scope="col"><h1>{{title}}</h1></th>
+            <td><button style="display: inline-block; float: right; margin-right: 0.5rem" type="button" class="btn btn-danger" data-delete-id="{{id}}" id="deleteBtn">글삭제</button><button style="display: inline-block; float: right;margin-right: 0.2rem" type="button" class="btn btn-success" data-update-id="{{id}}" id="updateBtn">글수정</button></td>
+        </tr>
+
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">작성자: {{nickname}} &nbsp;&nbsp;|&nbsp;&nbsp; 작성시간 : {{#writeTime}}{{writeTime}}{{/writeTime}}{{^writeTime}}Null{{/writeTime}}</th>
+                <td><p>댓글 수: {{count}}</p></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="font-size: 25px"><pre>{{content}}</pre></td>
+            </tr>
+        </tbody>
+    </table>
+
+{{/article}}
+{{>comment/list}}
+
+
+<script>
+    {
+        const deleteBtn = document.querySelector("#deleteBtn");
+
+        deleteBtn.addEventListener('click', function() {
+            deleteId = deleteBtn.getAttribute("data-delete-id");
+
+            const url = `/api/board/delete/${deleteId}`;
+
+            fetch(url, {
+                method: "DELETE"
+            }).then(response => {
+                if (!response.ok) {
+                    alert("글삭제 실패");
+                    return;
+                }
+                const msg = "글이 삭제되었습니다.";
+                alert(msg);
+                window.location.href='/board/free';
+            })
+        }
+    )
+    }
+
+    {
+        const updateBtn = document.querySelector("#updateBtn");
+
+        updateBtn.addEventListener('click', function() {
+            updateId = updateBtn.getAttribute("data-update-id");
+
+            const url = `/board/edit/${updateId}`;
+            window.location.href= url;
+        })
+    }
+</script>

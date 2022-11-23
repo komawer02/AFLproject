@@ -1,0 +1,25 @@
+
+spring:
+  datasource:
+    generate-unique-name: 'false'
+    username: cpp6czga49j5b0ic
+    url: jdbc:mariadb://iu51mf0q32fkhfpl.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/bw99od33t5te8ssy?characterEncoding=UTF-8&serverTimezone=UTC
+    password: r8uzde5f3jj9ks7z
+  jpa:
+
+    properties:
+      hibernate:
+        format_sql: 'true'
+    defer-datasource-initialization: 'true'
+    hibernate:
+      ddl-auto: update
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+

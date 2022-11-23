@@ -1,0 +1,21 @@
+{{>layouts/header}}
+<div class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white"
+     style="background-image: url('/images/main_bg.jpeg'); height:65vh;  background-repeat:no-repeat; background-size:cover;">
+    <h1 class="mb-3 h2">AFL</h1>
+</div>
+
+
+<form class="container" action="/analyze" method="get">
+    <h4>인공지능이 분석해주는 나의 전적 성향</h4>
+    <div class="mb-3">
+        <label class="form-label">닉네임을 입력하시면 인공지능이 유저분의 최근전적 20판을 데이터로 받아들여서 플레이 성향을 분석해줍니다.</label>
+        <input type="text" placeholder="닉네임을 입력하세요 .." class="form-control" name="data">
+    </div>
+    <button type="submit"  class="btn btn-primary">AI 분석 받아보기</button>
+
+</form>
+
+
+
+
+{{>layouts/footer}}

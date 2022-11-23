@@ -1,0 +1,47 @@
+{{>layouts/header}}
+<div style="margin-left: 5rem; margin-top: 1rem;">
+    <h1>{{userName}}님의 성향 분석 결과입니다.</h1>
+    <h4>{{result_str}}</h4>
+</div>
+
+
+<h1 class="display-1" style="width: 50%; margin-left: 5rem;">
+    <div class="progress" style="margin-top: 1rem;">
+        <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width:{{result1}}%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div style="text-align: end; font-size: 1.2rem;">롤을 접어야 하는 성향 : {{result1}}%</div>
+    <div class="progress" style="margin-top: 1rem;">
+        <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width:{{result2}}%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+
+    </div>
+    <div style="text-align: end; font-size: 1.2rem;">안정적인 도구(서포터) 성향 : {{result2}}%</div>
+    <div class="progress" style="margin-top: 1rem;">
+        <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width:{{result3}}%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div style="text-align: end; font-size: 1.2rem;">안정적인 캐리력 성향 : {{result3}}%</div>
+    <div class="progress" style="margin-top: 1rem;">
+        <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: {{result4}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div style="text-align: end; font-size: 1.2rem;">충동적, 공격적인 도구(서포터) 성향 : {{result4}}%</div>
+    <div class="progress" style="margin-top: 1rem;">
+        <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: {{result5}}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div style="text-align: end; font-size: 1.2rem;">공격적 플레이의 라이너 성향 : {{result5}}%</div>
+    <div class="progress" style="margin-top: 1rem;">
+        <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: {{result6}}%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div style="text-align: end; font-size: 1.2rem;">전체적인 게임플레이에 관여율이 높은 성향 : {{result6}}%</div>
+    <div class="progress" style="margin-top: 1rem;">
+        <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width:{{result7}}%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div style="text-align: end; font-size: 1.2rem;">진짜 잘하는 사람 <== 오더해야되는 성향 : {{result7}}%</div>
+
+
+
+</h1>
+
+
+
+
+
+{{>layouts/footer}}
